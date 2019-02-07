@@ -46,7 +46,7 @@ export const updateUser = id => dispatch => {
    dispatch({ type: LOADING, message: 'Updating user.' });
 
    axios
-      .get(`${endpoint}/api/users/:id`, id)
+      .get(`${endpoint}/api/users/:id`, id, options)
       .then(res => {
          dispatch({ type: UPDATE_USER, message: res.message });
       })
@@ -59,7 +59,7 @@ export const deleteUser = id => dispatch => {
    dispatch({ type: LOADING, message: 'Deleting user.' });
 
    axios
-      .get(`${endpoint}/api/users/:id`, id)
+      .get(`${endpoint}/api/users/:id`, id, options)
       .then(res => {
          dispatch({ type: DELETE_USER, message: res.message });
       })
