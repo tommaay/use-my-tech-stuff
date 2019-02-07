@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../store/actions/authActions';
-import { NavItem } from '../../styled/nav';
+import { NavItem, LinksContainer } from '../../styled/nav';
 
 class SignedinLinks extends Component {
    render() {
       return (
-         <React.Fragment>
+         <LinksContainer>
             <NavItem to="/">Home</NavItem>
             <NavItem to={`/profile/${this.props.userId}`}>Profile</NavItem>
             <NavItem to="/login" onClick={this.props.logout}>
                Sign Out
             </NavItem>
-         </React.Fragment>
+         </LinksContainer>
       );
    }
 }

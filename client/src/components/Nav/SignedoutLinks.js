@@ -1,12 +1,13 @@
 import React from 'react';
-import { NavItem } from '../../styled/nav';
+import { NavItem, LinksContainer } from '../../styled/nav';
 
 const SignedoutLinks = () => {
    return (
-      <React.Fragment>
+      <LinksContainer>
+         <NavItem to="/">Home</NavItem>
          <NavItem to="/login">Login</NavItem>
          <NavItem to="/signup">Sign Up</NavItem>
-      </React.Fragment>
+      </LinksContainer>
    );
 };
 
