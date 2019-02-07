@@ -12,11 +12,11 @@ export const login = userInfo => dispatch => {
    dispatch({ type: LOADING, message: 'Logging in.' });
 
    axios
-      .post(`http://localhost:5000/api/auth/login`, userInfo)
+      .post(`${endpoint}api/auth/login`, userInfo)
       .then(res => {
          localStorage.setItem('jwt', res.data.token);
 
-         dispatch({ type: LOGIN, payload: res.data });
+         dispatch({ type: LOGIN, payload: res.data.userId });
       })
       .catch(err => {
          dispatch({ type: ERROR, error: err });
@@ -27,10 +27,10 @@ export const register = userInfo => dispatch => {
    dispatch({ type: LOADING, message: 'New user is registering.' });
 
    axios
-      .post(`${endpoint}/api/auth/register`, userInfo)
+      .post(`${endpoint}api/auth/register`, userInfo)
       .then(res => {
          localStorage.setItem('jwt', res.data.token);
-         dispatch({ type: REGISTER, payload: res.data });
+         dispatch({ type: REGISTER, payload: res.data.userId });
       })
       .catch(err => {
          dispatch({ type: ERROR, error: err });
