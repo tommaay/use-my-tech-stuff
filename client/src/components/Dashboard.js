@@ -14,7 +14,7 @@ class Dashboard extends Component {
          return (
             <>
                {this.props.items.map(item => (
-                  <div key={item.id}>
+                  <div key={item.itemId}>
                      <h1>{item.title}</h1>
                   </div>
                ))}

@@ -12,7 +12,7 @@ export const login = userInfo => dispatch => {
    dispatch({ type: LOADING, message: 'Logging in.' });
 
    axios
-      .post(`${endpoint}api/auth/login`, userInfo)
+      .post(`${endpoint}/api/auth/login`, userInfo)
       .then(res => {
          localStorage.setItem('jwt', res.data.token);
 
@@ -27,7 +27,7 @@ export const register = userInfo => dispatch => {
    dispatch({ type: LOADING, message: 'New user is registering.' });
 
    axios
-      .post(`${endpoint}api/auth/register`, userInfo)
+      .post(`${endpoint}/api/auth/register`, userInfo)
       .then(res => {
          localStorage.setItem('jwt', res.data.token);
          dispatch({ type: REGISTER, payload: res.data.userId });

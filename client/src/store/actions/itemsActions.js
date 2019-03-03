@@ -20,7 +20,7 @@ export const getItems = () => dispatch => {
    dispatch({ type: LOADING, message: 'Fetching items.' });
 
    axios
-      .get(`${endpoint}api/items`)
+      .get(`${endpoint}/api/items`)
       .then(res => {
          dispatch({ type: FETCH_ITEMS, payload: res.data });
       })
@@ -33,7 +33,7 @@ export const getItemById = id => dispatch => {
    dispatch({ type: LOADING, message: 'Fetching item.' });
 
    axios
-      .get(`${endpoint}api/items/:id`, id)
+      .get(`${endpoint}/api/items/:id`, id)
       .then(res => {
          dispatch({ type: FETCH_ITEM_BY_ID, payload: res.data });
       })
@@ -46,7 +46,7 @@ export const updateItem = id => dispatch => {
    dispatch({ type: LOADING, message: 'Updating item.' });
 
    axios
-      .get(`${endpoint}api/items/:id`, id, options)
+      .get(`${endpoint}/api/items/:id`, id, options)
       .then(res => {
          dispatch({ type: UPDATE_ITEM, message: res.message });
       })
@@ -59,7 +59,7 @@ export const deleteItem = id => dispatch => {
    dispatch({ type: LOADING, message: 'Deleting item.' });
 
    axios
-      .get(`${endpoint}api/items/:id`, id, options)
+      .get(`${endpoint}/api/items/:id`, id, options)
       .then(res => {
          dispatch({ type: DELETE_ITEM, message: res.message });
       })

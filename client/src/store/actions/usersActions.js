@@ -21,7 +21,7 @@ export const getUsers = () => dispatch => {
    dispatch({ type: LOADING, message: 'Fetching users.' });
 
    axios
-      .get(`${endpoint}api/users`)
+      .get(`${endpoint}/api/users`)
       .then(res => {
          dispatch({ type: FETCH_USERS, payload: res.data });
       })
@@ -34,7 +34,7 @@ export const getUserById = id => dispatch => {
    dispatch({ type: LOADING, message: 'Fetching users.' });
 
    axios
-      .get(`${endpoint}api/users/:id`, id)
+      .get(`${endpoint}/api/users/:id`, id)
       .then(res => {
          dispatch({ type: FETCH_USER_BY_ID, payload: res.data });
       })
@@ -47,7 +47,7 @@ export const getItemsByUserId = id => dispatch => {
    dispatch({ type: LOADING, message: 'Fetching items.' });
 
    axios
-      .get(`${endpoint}api/users/:id/items`, id)
+      .get(`${endpoint}/api/users/:id/items`, id)
       .then(res => {
          dispatch({ type: FETCH_USER_ITEMS, payload: res.data });
       })
@@ -60,7 +60,7 @@ export const updateUser = id => dispatch => {
    dispatch({ type: LOADING, message: 'Updating user.' });
 
    axios
-      .patch(`${endpoint}api/users/:id`, id, options)
+      .patch(`${endpoint}/api/users/:id`, id, options)
       .then(res => {
          dispatch({ type: UPDATE_USER, message: res.message });
       })
@@ -73,7 +73,7 @@ export const deleteUser = id => dispatch => {
    dispatch({ type: LOADING, message: 'Deleting user.' });
 
    axios
-      .delete(`${endpoint}api/users/:id`, id, options)
+      .delete(`${endpoint}/api/users/:id`, id, options)
       .then(res => {
          dispatch({ type: DELETE_USER, message: res.message });
       })
